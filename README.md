@@ -72,5 +72,5 @@ public class HashGenerator {
    }
 }
 ```
-**Output**
-`fafea129696d518803971f70561ef831`
+**Output**  
+>`fafea129696d518803971f70561ef831`
