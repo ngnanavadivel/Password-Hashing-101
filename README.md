@@ -25,7 +25,7 @@ A quick journey into the world of cryptographic hash functions and an attempt to
   
  ## Let's rollup our sleeves and generate some *hashes (message digests)* using Java Security API.
  
- The following are the valid Message Digest Algorithm names supported by the Java Security API to perform one-way hashing:
+ The following are the valid *Message Digest Algorithm Names* supported by the Java Security API to perform one-way hashing:
  
   | Algorithm Names |
   |---|
