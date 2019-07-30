@@ -3,7 +3,7 @@ A quick journey into the world of cryptographic hash functions and an attempt to
 
 ## What is a Hash function?
 
-  - A mathematical algorithm that transforms an **arbitrary sized data** into a **smaller fixed length data**.
+  - A mathematical algorithm that transforms an **arbitrary sized input message** into a **smaller fixed length hash**.
   - The result of the hashing functions is often called by various names like **Hash, Digest, checksum, fingerprint** etc.,
 
 ## Characteristics of a good Hashing function:
