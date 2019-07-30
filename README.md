@@ -40,7 +40,7 @@ A quick journey into the world of cryptographic hash functions and an attempt to
   [Reference of the above can be found here](https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest).
   
   ```java
-  package com.experiments;
+package com.experiments;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -67,10 +67,23 @@ public class HashGenerator {
 
    public static void main(String[] args) throws Exception {
       String inputMessage = "Welcome to the world of Cryptography!";
-      String hash = createDigest(inputMessage, "MD5");
-      System.out.println(hash);
+      
+      String md5Algo = "MD5";
+      String md5Hash = createDigest(inputMessage, md5Algo);
+      System.out.println(String.format("%-10s : %-120s", md5Algo, md5Hash));
+      
+      String sha256Algo = "SHA-256";
+      String sha256Hash = createDigest(inputMessage, sha256Algo);
+      System.out.println(String.format("%-10s : %-120s", sha256Algo, sha256Hash));
+      
+      String sha512Algo = "SHA-512";
+      String sha512Hash = createDigest(inputMessage, sha512Algo);
+      System.out.println(String.format("%-10s : %-120s", sha512Algo, sha512Hash));
    }
 }
 ```
 **Output**  
->`fafea129696d518803971f70561ef831`
+>`MD5        : fafea129696d518803971f70561ef831`                                                                                     
+>`SHA-256    : 3a9af738f328bfafcedfd3d1ee15c412ce4d4a21e5fff5d9f3074fe900efde1a`                                                       
+>`SHA-512    : 8bbc672e5c2a28dc5bc56ccc5f0e4a3b330c60d6e54e943e00c14aab4ecf3602bae785e3c88111f08350f7934e14cac447b1f922a5aba6cf4e6f924fff2ebd60`
+
