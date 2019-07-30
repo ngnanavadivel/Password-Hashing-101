@@ -1,5 +1,5 @@
 # Hashing
-A quick walk through of generating hashes using popular hash functions like MD5, SHA1, SHA256, SHA512, PBKDF2 and the like.
+A quick journey into the world of cryptographic hash functions and an attempt to generate hashes using popular hash functions like MD5, SHA1, SHA2 (224, 256, 384, 512), SHA3, PBKDF2, bcrypt, scrypt and the like.
 
 ## What is a Hash function?
 
@@ -10,10 +10,14 @@ A quick walk through of generating hashes using popular hash functions like MD5,
 
   1. Should be **deterministic**.   
      Which means the hashing function **should always return the SAME hash** value for a given message consistently.
-  2. Should be **one-way**.  
-     Which means it should be practically **infeasible to reverse engineer** the hash value back to the original message.
-  3. Should be **collision-resistant**  
+     
+  2. Should be **one-way | preimage resistant**.  
+     Which means it should be computationally **infeasible to reverse engineer** the hash value back to the original message.
+     
+  3. Should be **strongly collision free | second-preimage-resistant**  
      Which means it should be **infeasible to generate the SAME hash** from two different messages.
-  4. Should posses **avalanche-effect**  
+     
+  4. Should posses **avalanche-effect | aka diffusion in cryptographic parlance**  
      Which means **even a small change in the input** message should **result in a drastically different hash value**.
   
+  5. Should be **computationally fast** to compute the hash.
