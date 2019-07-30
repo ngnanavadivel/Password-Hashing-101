@@ -9,11 +9,11 @@ A quick walk through of generating hashes using popular hash functions like MD5,
 ## Characteristics of a good Hashing function:
 
   1. Should be **deterministic**.   
-     Which means the hashing function should always return the **SAME hash** value for a given message consistently.
+     Which means the hashing function **should always return the SAME hash** value for a given message consistently.
   2. Should be **one-way**.  
-     Which means it should be practically infeasible to reverse engineer the hash value back to the original message.
+     Which means it should be practically **infeasible to reverse engineer** the hash value back to the original message.
   3. Should be **collision-resistant**  
-     Which means it should be infeasible to generate the **SAME hash** from two different messages.
+     Which means it should be **infeasible to generate the SAME hash** from two different messages.
   4. Should posses **avalanche-effect**  
-     Which means even a small change in the input message should result in a drastically different hash value.
+     Which means **even a small change in the input** message should **result in a drastically different hash value**.
   
