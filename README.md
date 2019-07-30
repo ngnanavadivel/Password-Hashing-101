@@ -16,8 +16,24 @@ A quick journey into the world of cryptographic hash functions and an attempt to
      
   3. Should be **strongly collision free | second-preimage-resistant**  
      Which means it should be **infeasible to generate the SAME hash** from two different messages.
+     Or to be precise, it should be **difficult to find two messages M1 and M2 such that H(M1) = H(M2)
      
   4. Should posses **avalanche-effect | aka diffusion in cryptographic parlance**  
      Which means **even a small change in the input** message should **result in a drastically different hash value**.
   
   5. Should be **computationally fast** to compute the hash.
+  
+ ## Let's rollup our sleeves and generate some *hashes (message digests)* using Java Security API.
+ 
+ The following are the valid Message Digest Algorithm names supported by the Java Security API to perform one-way hashing:
+ 
+  | Algorithm Names |
+  |---|
+  | MD2 |
+  | MD5 |  
+  | SHA-1 |
+  | SHA-224 |
+  | SHA-256 |
+  | SHA-384 |
+  | SHA-512 |
+
