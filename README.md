@@ -38,3 +38,39 @@ A quick journey into the world of cryptographic hash functions and an attempt to
   | SHA-512 |
 
   [Reference of the above can be found here](https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest).
+  
+  ```java
+  package com.experiments;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+public class HashGenerator {
+
+   public static String
+          createDigest(String inputMessage,
+                       String messageDigestAlgorithm) throws NoSuchAlgorithmException {
+      MessageDigest digester = MessageDigest.getInstance(messageDigestAlgorithm);
+      byte[] digestAsByteArray =
+                               digester.digest(inputMessage.getBytes(StandardCharsets.UTF_8));
+      return bytesToHex(digestAsByteArray);
+   }
+
+   private static String bytesToHex(byte[] bytes) {
+      StringBuilder builder = new StringBuilder();
+      for (byte each : bytes) {
+         builder.append(String.format("%02x", each));
+      }
+      return builder.toString();
+   }
+
+   public static void main(String[] args) throws Exception {
+      String inputMessage = "Welcome to the world of Cryptography!";
+      String hash = createDigest(inputMessage, "MD5");
+      System.out.println(hash);
+   }
+}
+```
+**Output**
+`fafea129696d518803971f70561ef831`
