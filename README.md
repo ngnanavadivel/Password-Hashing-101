@@ -37,3 +37,4 @@ A quick journey into the world of cryptographic hash functions and an attempt to
   | SHA-384 |
   | SHA-512 |
 
+  [Reference of the above can be found here](https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#MessageDigest).
