@@ -215,3 +215,4 @@ ____
  1. [Storing Salts!](https://security.stackexchange.com/questions/17421/how-to-store-salt)
  2. [Bytes to Hexadecimal conversion!](https://www.mkyong.com/java/java-how-to-convert-bytes-to-hex/)
  3. [How many password combinations!](https://math.stackexchange.com/questions/739874/how-many-possible-combinations-in-8-character-password)
+ 4. [Ahsley Madison breach and a nice writeup on password hashing!](https://www.acunetix.com/blog/articles/password-hashing-and-the-ashley-madison-hack/)
