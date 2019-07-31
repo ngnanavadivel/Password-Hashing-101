@@ -255,7 +255,73 @@ public class BcryptHashGenerator {
 }
 ```
 
+### Ouput
+```
+Bcrypted Hash : $2a$12$3sqD.FY8GPN3F1J2uhVnMOXuB4X3yfZ9uQ0DKAKWOiqLKgtV/LS0W   
+WelKome to Amsterdam, Comrade! : true   
+somedummypassphrase : false  
+```
+
 ## PBKDF2 based hashing which comes along with JDK
+
+```java
+package com.experiments;
+
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.spec.InvalidKeySpecException;
+
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
+
+public class PBKDF2HashGenerator {
+
+   public static String createPBKDF2Digest(String inputMessage,
+                                           String randomSalt) throws InvalidKeySpecException,
+                                                              NoSuchAlgorithmException {
+      PBEKeySpec keySpec = new PBEKeySpec(inputMessage.toCharArray(),
+                                          randomSalt.getBytes(),
+                                          1000,
+                                          256);
+      SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+      byte[] encoded = keyFactory.generateSecret(keySpec).getEncoded();
+      return bytesToHex(encoded);
+   }
+
+   private static String generateRandomSalt() throws NoSuchAlgorithmException {
+      // Let's use SHA1 Pseudo Random Number Generator.
+      SecureRandom random = SecureRandom.getInstance("SHA1PRNG");
+      byte[] salt = new byte[64];
+      random.nextBytes(salt);
+      return new String(salt);
+   }
+
+   private static String bytesToHex(byte[] bytes) {
+      StringBuilder builder = new StringBuilder();
+      for (byte each : bytes) {
+         builder.append(String.format("%02x", each));
+      }
+      return builder.toString();
+   }
+
+   public static void main(String[] args) throws Exception {
+      String inputMessage = "Hola Hashing from el camino real!!!";
+      String randomSalt = generateRandomSalt();
+      String pbkdf2Digest = createPBKDF2Digest(inputMessage, randomSalt);
+      System.out.println("Random Salt : " + bytesToHex(randomSalt.getBytes()));
+      System.out.println("PBKDF2 Digest : " + pbkdf2Digest);
+   }
+}
+
+```
+
+### Output
+
+```
+Random Salt : efbfbdd49010efbfbdefbfbdefbfbd2b6d7eefbfbd674e09efbfbd2fefbfbd45efbfbd0449efbfbdefbfbd3d0fefbfbd072419efbfbdefbfbdefbfbdefbfbdefbfbdefbfbd0eefbfbd01d390d2a87befbfbd1f09efbfbdefbfbd62efbfbd25efbfbd7f627268efbfbd28efbfbd20efbfbdefbfbd5869   
+PBKDF2 Digest : 64819bed0aee4367b89627dc95c4ec00a218035a2e550d30b384b04c44dead78
+
+```
 ____  
 
 ## References
