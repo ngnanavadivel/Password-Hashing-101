@@ -87,3 +87,12 @@ public class HashGenerator {
 >`SHA-256    : 3a9af738f328bfafcedfd3d1ee15c412ce4d4a21e5fff5d9f3074fe900efde1a`                                                       
 >`SHA-512    : 8bbc672e5c2a28dc5bc56ccc5f0e4a3b330c60d6e54e943e00c14aab4ecf3602bae785e3c88111f08350f7934e14cac447b1f922a5aba6cf4e6f924fff2ebd60`
 
+
+
+____  
+
+## References
+
+ 0. [One Way Hashing!] (https://www.cs.rit.edu/~ark/lectures/onewayhash/onewayhash.shtml)
+ 1. [Storing Salts!](https://security.stackexchange.com/questions/17421/how-to-store-salt)
+ 2. [Bytes to Hexadecimal conversion!](https://www.mkyong.com/java/java-how-to-convert-bytes-to-hex/)
