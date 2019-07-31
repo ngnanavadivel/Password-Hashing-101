@@ -208,6 +208,12 @@ An interesting note is that the rest of the passwords are **Bcrypt** hashed whic
 **So, Be Wise in choosing the Hashing Algorithm!.**
 
 [Ashley Madison Breach](https://en.wikipedia.org/wiki/Ashley_Madison_data_breach)
+
+## LinkedIn 2012 Data breach!!!
+
+As per wiki, Over 6.5 million emails/passwords that are SHA-1 hashed **with NO SALT** have been hacked.
+
+[LinkedIn Breach](https://en.wikipedia.org/wiki/2012_LinkedIn_hack)
 ____  
 
 ## References
