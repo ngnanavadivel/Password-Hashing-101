@@ -191,7 +191,7 @@ public class HashGenerator {
 ### Ouput
 
 `
-User Specified Salt, V1  : MD5        : c72ca42b6ebf256d269b3ea44bf4cc1a                                                                                        
+User Specified Salt, V1  : MD5        : c72ca42b6ebf256d269b3ea44bf4cc1a                                                                                          
 User Specified Salt, V2  : MD5        : e68352f48100a21f9cbbe05303556c84                                                                                        
 Secure Random Salt (PRNG): MD5        : bc7f152292fa1240e5a22cfad2352a00                                                                 
 `
