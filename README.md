@@ -102,9 +102,11 @@ public class HashGenerator {
     Since the passwords to be tried are a handful compared to the bruteforce, there is a very good chance that the hacker may not guess     the correct password too.
     
     
-    >###Avoiding Bruteforce / Dictionary Attacks###
-    > 1. **Lock the accounts temporarily** (Don't engage in authentication at all for the next 3 hours or 24 hours) after 3 or 5 consecutive authentication failures. This would effectively make the automated hacking routines from keep on trying all the password combinations.
-    > 2. **Using bigger password lengths** would increase the time taken to try all the combinations. For example, a 8 digit password (any combination of case insensitive alphanumeric, punctuations and special character allowed) would have <sup>**95**</sup>8 possible password combinations.
+    ### Avoiding Bruteforce / Dictionary Attacks###
+    
+    - **Lock the accounts temporarily** (Don't engage in authentication at all for the next 3 hours or 24 hours) after 3 or 5                  consecutive authentication failures. This would effectively make the automated hacking routines from keep on trying all the              password combinations.
+    
+    - **Using bigger password lengths** would increase the time taken to try all the combinations. For example, a 8 digit password (any        combination of case insensitive alphanumeric, punctuations and special character allowed) would have **95<sup>8</sup>** possible        password combinations.
     
   3. Getting (Reverse Engineer) the password from the *hash* of it using **Rainbow Table attacks**:
 
