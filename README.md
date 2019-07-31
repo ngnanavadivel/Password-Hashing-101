@@ -93,6 +93,6 @@ ____
 
 ## References
 
- 0. [One Way Hashing!] (https://www.cs.rit.edu/~ark/lectures/onewayhash/onewayhash.shtml)
+ 0. [One Way Hashing!](https://www.cs.rit.edu/~ark/lectures/onewayhash/onewayhash.shtml)
  1. [Storing Salts!](https://security.stackexchange.com/questions/17421/how-to-store-salt)
  2. [Bytes to Hexadecimal conversion!](https://www.mkyong.com/java/java-how-to-convert-bytes-to-hex/)
