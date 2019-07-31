@@ -119,14 +119,82 @@ public class HashGenerator {
   
   Passwords could be salted and the hashes are generated as follows:
   
+```
     saltedhash(password) = hash(password + salt)
 
     Or
 
     saltedhash(password) = hash(hash(password) + salt)
+```
 
 
+## Let's add some **salt** while generating classic hashes (MD5 and SHA) using Java
 
+```java
+
+import java.security.SecureRandom;
+
+public class HashGenerator {
+
+  ...
+  ...
+  
+   public static String
+          createSaltedDigest1(String inputMessage,
+                              String salt,
+                              String messageDigestAlgorithm) throws NoSuchAlgorithmException {
+      return createDigest(inputMessage + salt, messageDigestAlgorithm);
+   }
+
+   public static String
+          createSaltedDigest2(String inputMessage,
+                              String salt,
+                              String messageDigestAlgorithm) throws NoSuchAlgorithmException {
+      String intermediateDigest = createDigest(inputMessage, messageDigestAlgorithm);
+      return createDigest(intermediateDigest + salt, messageDigestAlgorithm);
+   }
+
+   public static String
+          createRandomSaltedDigest(String inputMessage,
+                                   String messageDigestAlgorithm) throws NoSuchAlgorithmException {
+      byte[] randomSalt = new byte[32];
+      SecureRandom random = new SecureRandom();
+      random.nextBytes(randomSalt);
+      return createSaltedDigest1(inputMessage, new String(randomSalt), messageDigestAlgorithm);
+   }
+
+   public static void main(String[] args) throws Exception {
+   
+      ...
+      ...
+      
+      String inputMessage = "Welcome to the world of Cryptography!";
+      String md5Algo = "MD5";
+      String md5SaltedHash1 = createSaltedDigest1(inputMessage,
+                                                  "salty-cracker-jacker-@#$-965",
+                                                  md5Algo);
+      System.out.println(String
+         .format("User Specified Salt, V1  : %-10s : %-120s", md5Algo, md5SaltedHash1));
+      String md5SaltedHash2 = createSaltedDigest2(inputMessage,
+                                                  "salty-cracker-jacker-@#$-965",
+                                                  md5Algo);
+      System.out.println(String
+         .format("User Specified Salt, V2  : %-10s : %-120s", md5Algo, md5SaltedHash2));
+      String md5RandomSaltedHash = createRandomSaltedDigest(inputMessage, md5Algo);
+      System.out.println(String
+         .format("Secure Random Salt (PRNG): %-10s : %-120s", md5Algo, md5RandomSaltedHash));
+   }
+
+   
+```
+
+### Ouput
+
+`
+User Specified Salt, V1  : MD5        : c72ca42b6ebf256d269b3ea44bf4cc1a                                                                                        
+User Specified Salt, V2  : MD5        : e68352f48100a21f9cbbe05303556c84                                                                                        
+Secure Random Salt (PRNG): MD5        : bc7f152292fa1240e5a22cfad2352a00                                                                 
+`
 
 ____  
 
