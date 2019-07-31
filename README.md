@@ -127,6 +127,7 @@ public class HashGenerator {
     saltedhash(password) = hash(hash(password) + salt)
 ```
 
+> **Salt adds more entropy to the password. i.e., the randomness of the password to be hashed would be drammatically increased.** **NIST** National Institute of Standards and Technology recommends the salt length be atleast **128 bits**.
 
 ## Let's add some **salt** while generating classic hashes (MD5 and SHA) using Java
 
