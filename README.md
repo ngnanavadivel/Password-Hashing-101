@@ -223,4 +223,4 @@ ____
  2. [Bytes to Hexadecimal conversion!](https://www.mkyong.com/java/java-how-to-convert-bytes-to-hex/)
  3. [How many password combinations!](https://math.stackexchange.com/questions/739874/how-many-possible-combinations-in-8-character-password)
  4. [Ahsley Madison breach and a nice writeup on password hashing!](https://www.acunetix.com/blog/articles/password-hashing-and-the-ashley-madison-hack/)
- 5. [Various ways to convert Hex to Bytes and vice versa by Baeldung]!(https://en.wikipedia.org/wiki/2012_LinkedIn_hack)
+ 5. [Various ways to convert Hex to Bytes and vice versa by Baeldung!](https://en.wikipedia.org/wiki/2012_LinkedIn_hack)
