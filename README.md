@@ -214,6 +214,48 @@ An interesting note is that the rest of the passwords are **Bcrypt** hashed whic
 As per wiki, Over 6.5 million emails/passwords that are SHA-1 hashed **with NO SALT** have been hacked.
 
 [LinkedIn Breach](https://en.wikipedia.org/wiki/2012_LinkedIn_hack)
+
+## BCrypt using jBCrypt Java Library
+
+Maven coordinates for the jBCrypt Library:
+
+```xml
+<dependency>
+  <groupId>org.mindrot</groupId>
+  <artifactId>jbcrypt</artifactId>
+  <version>0.4</version>
+</dependency>
+```
+
+```java
+package com.experiments;
+
+import org.mindrot.jbcrypt.BCrypt;
+
+public class BcryptHashGenerator {
+
+   public static String createDigest(String inputMessage) {
+      return BCrypt.hashpw(inputMessage, BCrypt.gensalt(12));
+   }
+
+   public static boolean verifyDigest(String inputMessage, String digest) {
+      return BCrypt.checkpw(inputMessage, digest);
+   }
+
+   public static void main(String[] args) {
+      String inputMessage = "WelKome to Amsterdam, Comrade!";
+      String wrongInputMessage = "somedummypassphrase";
+      
+      String bcryptedHash = createDigest(inputMessage);
+      
+      System.out.println("Bcrypted Hash : " + bcryptedHash);
+      System.out.println(inputMessage + " : " + verifyDigest(inputMessage, bcryptedHash));
+      System.out.println(wrongInputMessage + " : " + verifyDigest(wrongInputMessage, bcryptedHash));
+   }
+}
+```
+
+## PBKDF2 based hashing which comes along with JDK
 ____  
 
 ## References
