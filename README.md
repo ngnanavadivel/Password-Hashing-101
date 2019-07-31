@@ -199,12 +199,12 @@ User Specified Salt, V2  : MD5        : e68352f48100a21f9cbbe05303556c84
 Secure Random Salt (PRNG): MD5        : bc7f152292fa1240e5a22cfad2352a00                                                                 
 ```
 
-## Ashley Madison Data Breach in 2011 and MD5 vulnerability !!!
+## Ashley Madison Data Breach in 2011 and MD5 hashed passwords!!!
 
 As per wikipedia, a data breach at Ashley Madison looses over 36 million password hashes to a hacking team.
 Out of those 36 million, over 11 million passwords are MD5 hashed and are easily hacked back to original passwords.
 
-**So, Be Wise in choosing the Hashing Algorithm!. Don't use MD5 at all!!**
+**So, Be Wise in choosing the Hashing Algorithm!.**
 
 [Ashley Madison Breach](https://en.wikipedia.org/wiki/Ashley_Madison_data_breach)
 ____  
