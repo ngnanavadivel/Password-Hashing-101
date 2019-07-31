@@ -87,8 +87,33 @@ public class HashGenerator {
 >`SHA-256    : 3a9af738f328bfafcedfd3d1ee15c412ce4d4a21e5fff5d9f3074fe900efde1a`                                                       
 >`SHA-512    : 8bbc672e5c2a28dc5bc56ccc5f0e4a3b330c60d6e54e943e00c14aab4ecf3602bae785e3c88111f08350f7934e14cac447b1f922a5aba6cf4e6f924fff2ebd60`
 
+## Safeguarding from hash precomputation attacks like Dictionary Attacks and Rainbow Tables:
 
+ 1. Guessing the correct password (in plaintext) using the **bruteforce-attack**:
+ 
+    The bruteforce-attack is trying all the possible combinations of alphanumeric and special characters for various password lengths.
+    
+    For example, It's like trying all the numbers between 000 to 999 for a 3 digit number lock in a briefcase.
+ 
+ 2. Guessing the correct password (in plaintext) using the **dictionary-attack**:
+ 
+    The dictionary-attack is a refinement or trying a sub set of the password combinations which are very popular and those that are         derived from the user's family names, birthdates, place of origin and the like.
+ 
+    Since the passwords to be tried are a handful compared to the bruteforce, there is a very good chance that the hacker may not guess     the correct password too.
+    
+    
+    >###Avoiding Bruteforce / Dictionary Attacks###
+    > 1. **Lock the accounts temporarily** (Don't engage in authentication at all for the next 3 hours or 24 hours) after 3 or 5 consecutive authentication failures. This would effectively make the automated hacking routines from keep on trying all the password combinations.
+    > 2. **Using bigger password lengths** would increase the time taken to try all the combinations. For example, a 8 digit password (any combination of case insensitive alphanumeric, punctuations and special character allowed) would have <sup>**95**</sup>8 possible password combinations.
+    
+  3. Getting (Reverse Engineer) the password from the *hash* of it using **Rainbow Table attacks**:
 
+     Rainbow Tables are one of the precomputation attacks that employ hash chaining which facilitates less storage compared to the            Dictionary attack.
+    
+     
+  ### Adding **Salt** to the rescue:   
+
+  Rainbow table attacks could be thwarted by adding a large sized **salt** to the password while hashing.
 ____  
 
 ## References
@@ -96,3 +121,4 @@ ____
  0. [One Way Hashing!](https://www.cs.rit.edu/~ark/lectures/onewayhash/onewayhash.shtml)
  1. [Storing Salts!](https://security.stackexchange.com/questions/17421/how-to-store-salt)
  2. [Bytes to Hexadecimal conversion!](https://www.mkyong.com/java/java-how-to-convert-bytes-to-hex/)
+ 3. [How many password combinations!](https://math.stackexchange.com/questions/739874/how-many-possible-combinations-in-8-character-password)
